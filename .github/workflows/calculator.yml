@@ -1,6 +1,7 @@
 name: Playwright Test Pipeline
 
-on: [push]
+on:
+  workflow_call:
 
 jobs:
   run_tests:
