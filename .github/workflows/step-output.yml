@@ -1,0 +1,21 @@
+name: Step Output Demo
+
+on:
+  push:
+    branches: [ main ]
+    
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: output age
+        id: output-age
+        shell: bash
+        run: | 
+          echo "name=Simon" >> $GITHUB_OUTPUT
+          echo "age=50" >> $GITHUB_OUTPUT
+
+      - name: access - output age
+        run: echo "Hello,  ${{ steps.output-age.outputs.name }} is ${{ steps.output-age.outputs.age }} years old"
+        
