@@ -1,0 +1,12 @@
+{
+  "name": "bank-simulator",
+  "version": "1.0.0",
+  "scripts": {
+    "start-server": "npx serve . -l 8080",
+    "test": "npx playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "serve": "^14.2.6"
+  }
+}
