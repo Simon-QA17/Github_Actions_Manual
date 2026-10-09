@@ -1,0 +1,25 @@
+name: Environment Variables
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  WORKFLOW_VAR: "Variable available in Workflow"
+
+jobs:
+  Demo-Job:
+    env:
+      JOB_VAR: "Variable available in Demo-Job only"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Demo-Step
+        env:
+          STEPS_VAR: "Variable available in Steps only"
+        run: |
+          echo "This is WORKFLOW_VAR ${{ env.WORKFLOW_VAR}}"
+          echo "This is JOB_VAR ${{ env.JOB_VAR }}"
+          echo "This is STEPS_VAR ${{ env.STEPS_VAR }}"
+        
+    
