@@ -19,7 +19,12 @@ jobs:
           STEPS_VAR: "It is only available in Demo-Step"
         run: |
           echo "This is WORKFLOW_VAR: ${{ env.WORKFLOW_VAR}}"
-          echo "This is JOB_VAR ${{ env.JOB_VAR }}"
-          echo "This is STEPS_VAR ${{ env.STEPS_VAR }}"
+          echo "This is JOB_VAR: ${{ env.JOB_VAR }}"
+          echo "This is STEPS_VAR: ${{ env.STEPS_VAR }}"
+          
+      - name: Access repo vars
+        run: |
+          echo "This is REPO_VAR: ${{ vars.REPO_VAR}}"
+          echo "This is REPO_SECRET: ${{ secrets.REPO_SECRET }}"
         
     
